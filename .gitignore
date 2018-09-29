@@ -2,3 +2,4 @@
 __pycache__
 vk-bot-description.txt
 users.db
+*.xlsx
