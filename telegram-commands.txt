@@ -1,0 +1,10 @@
+Supported commands:
+/scrape - scrapes and returns xlsx file with scraped data. Name of file is built from date when it was scraped: "(day-month-year).xlsx"
+/archive - gives a list of scraped data for the last 31 days (one month)
+/compare - compares two datasets, giving results about changes in the second dataset (new products, altered prices, products gone out of stock) 
+/start - welcome message
+/help - brief info about supported commands 
+/contact - gives info about creator of this hyperintelligent bot
+
+ How to use /compare command:
+"/compare 01-09-2018 07-09-2018" (provided dates have to be in /archive in order to compare datasets)
