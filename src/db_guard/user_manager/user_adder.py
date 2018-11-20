@@ -1,4 +1,3 @@
-import os
 from src import constants
 from src.db_guard import db_manager
 

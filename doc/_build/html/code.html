@@ -1,0 +1,160 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>The MobDevBot API reference &#8212; MobDevBot 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Tutorial" href="tutorial.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MobDevBot 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="the-mobdevbot-api-reference">
+<h1>The MobDevBot API reference<a class="headerlink" href="#the-mobdevbot-api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-src.data_manager.data_manipulator">
+<span id="the-data-manipulator-module"></span><h2>The “data_manipulator” module<a class="headerlink" href="#module-src.data_manager.data_manipulator" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="src.data_manager.data_manipulator.compare_data">
+<code class="descclassname">src.data_manager.data_manipulator.</code><code class="descname">compare_data</code><span class="sig-paren">(</span><em>text</em>, <em>data_folder='../../data/'</em><span class="sig-paren">)</span><a class="headerlink" href="#src.data_manager.data_manipulator.compare_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compare two datasets, return result on changes in the second dataset</p>
+<p>Function receives a string which contains two dates separated by space.
+If there are two files in data folder with same exact names, function
+will return them, otherwise it will return an error message.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>text</strong> (<em>string</em>) – string with two file names separated by space</li>
+<li><strong>data_folder</strong> (<em>string</em>) – folder path for archived data</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a list with three datasets, which are also saved for bot to use, or returns error</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.data_manager.data_manipulator.show_archive">
+<code class="descclassname">src.data_manager.data_manipulator.</code><code class="descname">show_archive</code><span class="sig-paren">(</span><em>data_folder='../../data/'</em><span class="sig-paren">)</span><a class="headerlink" href="#src.data_manager.data_manipulator.show_archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of scraped data for the last 31 days</p>
+</dd></dl>
+
+</div>
+<div class="section" id="the-data-processor-module">
+<h2>The “data_processor” module<a class="headerlink" href="#the-data-processor-module" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="src.data_manager.data_processor.DataProcessor">
+<em class="property">class </em><code class="descclassname">src.data_manager.data_processor.</code><code class="descname">DataProcessor</code><span class="sig-paren">(</span><em>pars_args={'beeshop.kg': &lt;module 'src.parsers.beeshop_parser' from '/Users/danberd/Desktop/DataScience/mobdev-telegram-bot/src/parsers/beeshop_parser.py'&gt;</em>, <em>'kivano.kg': &lt;module 'src.parsers.kivano_parser' from '/Users/danberd/Desktop/DataScience/mobdev-telegram-bot/src/parsers/kivano_parser.py'&gt;</em>, <em>'mistore.kg': &lt;module 'src.parsers.mistore_parser' from '/Users/danberd/Desktop/DataScience/mobdev-telegram-bot/src/parsers/mistore_parser.py'&gt;</em>, <em>'mostovoy.kg': &lt;module 'src.parsers.mostovoy_parser' from '/Users/danberd/Desktop/DataScience/mobdev-telegram-bot/src/parsers/mostovoy_parser.py'&gt;</em>, <em>'myphone.kg': &lt;module 'src.parsers.myphone_parser' from '/Users/danberd/Desktop/DataScience/mobdev-telegram-bot/src/parsers/myphone_parser.py'&gt;</em>, <em>'ostore.kg': &lt;module 'src.parsers.ostore_parser' from '/Users/danberd/Desktop/DataScience/mobdev-telegram-bot/src/parsers/ostore_parser.py'&gt;</em>, <em>'softech.kg': &lt;module 'src.parsers.softech_parser' from '/Users/danberd/Desktop/DataScience/mobdev-telegram-bot/src/parsers/softech_parser.py'&gt;</em>, <em>'svetofor.kg': &lt;module 'src.parsers.svetofor_parser' from '/Users/danberd/Desktop/DataScience/mobdev-telegram-bot/src/parsers/svetofor_parser.py'&gt;}</em>, <em>data_folder='../../data/'</em><span class="sig-paren">)</span><a class="headerlink" href="#src.data_manager.data_processor.DataProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scrape the data from different sources, save, clean and load</p>
+<dl class="method">
+<dt id="src.data_manager.data_processor.DataProcessor.clean_data">
+<code class="descname">clean_data</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#src.data_manager.data_processor.DataProcessor.clean_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean the scraped data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.data_manager.data_processor.DataProcessor.scrape">
+<code class="descname">scrape</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.data_manager.data_processor.DataProcessor.scrape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yield messages of scraping process, and save data</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The MobDevBot API reference</a><ul>
+<li><a class="reference internal" href="#module-src.data_manager.data_manipulator">The “data_manipulator” module</a></li>
+<li><a class="reference internal" href="#the-data-processor-module">The “data_processor” module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="tutorial.html"
+                        title="previous chapter">Tutorial</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/code.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MobDevBot 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Daniiar Berdikulov.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
+    </div>
+  </body>
+</html>

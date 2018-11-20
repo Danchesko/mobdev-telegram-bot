@@ -6,8 +6,16 @@ import os
 import re
 
 class DataProcessor:
-        
+    """Scrape the data from different sources, save, clean and load"""    
     def __init__(self, pars_args = data_constants.PARSERS, data_folder = data_constants.DATA_FOLDER):
+        """
+        Initialize sources from which parsers are need to get data
+        
+        :param pars_args: A list of methods each scraping it's own website
+        :param data_folder: From where to load or where to save data
+        :type pars_args: list
+        :type data_folder: string
+        """
         self.file_name = data_folder + date_builder.get_current_date_for_xlsx()+".xlsx"
         self.pars_args = pars_args
         self.phones = []   
@@ -19,6 +27,7 @@ class DataProcessor:
         return open(self.file_name, 'rb')
     
     def scrape(self):
+        """Yield messages of scraping process, and save data"""
         for parser, page_name in self.pars_args.items():
             try:
                 yield(constants.PARSING_MESSAGE%parser)
@@ -36,6 +45,7 @@ class DataProcessor:
         writer.save()
         
     def clean_data(self, data):
+        """Clean the scraped data"""
         data = data.copy()
         data = data[data[constants.Phone.PRICE]!="\xa0"]
         for index, row in data.iterrows():

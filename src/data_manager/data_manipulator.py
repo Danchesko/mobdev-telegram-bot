@@ -7,6 +7,7 @@ from src.data_manager import data_constants
 
      
 def show_archive(data_folder = data_constants.DATA_FOLDER):
+    """Return a list of scraped data for the last 31 days"""
     archive = []
     current_date = date_builder.get_current_date()
     for file in os.listdir(data_folder):
@@ -20,6 +21,19 @@ def show_archive(data_folder = data_constants.DATA_FOLDER):
 
 
 def compare_data(text, data_folder = data_constants.DATA_FOLDER):
+    """
+    Compare two datasets, return result on changes in the second dataset
+    
+    Function receives a string which contains two dates separated by space.
+    If there are two files in data folder with same exact names, function
+    will return them, otherwise it will return an error message.
+    
+    :param text: string with two file names separated by space
+    :param data_folder: folder path for archived data
+    :type text: string
+    :type data_folder: string
+    :return: a list with three datasets, which are also saved for bot to use, or returns error
+    """
     arguments = text.split(" ")[1:]
     message = check_arguments(arguments, data_folder)
     if not message:
