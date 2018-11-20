@@ -1,11 +1,13 @@
 import telebot
+import sys
+sys.path.append("../../")
 from src import constants
 from src.telegram_bot import bot_service
 from src.data_manager import data_manipulator
 from src.db_guard.user_manager import user_adder
 from src.db_guard.access_granter import id_checker
 bot = telebot.TeleBot(constants.BOT_TOKEN)
-bot_service.create_db_conn("../../db/users.db")
+
 
 
 @bot.message_handler(commands = ['login'])
@@ -55,4 +57,7 @@ def compare(message):
 def echo_all(message):
     bot.reply_to(message, constants.HELP_MESSAGE)
     
-bot.polling(none_stop=True,interval=0,timeout=1000)
+    
+if __name__ == "__main__":
+    bot_service.create_db_conn("../../db/users.db")
+    bot.polling(none_stop=True,interval=0,timeout=1000)
