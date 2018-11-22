@@ -2,6 +2,7 @@ from src import constants
 from src.db_guard import db_manager
 
 def sign_in(message):
+    """ Sign in a user if valid password provided"""
     arguments = message.text.split(" ")[1:]
     if len(arguments)!=1:
         return constants.INVALID_ARGUMENT_MESSAGE % " ".join(arguments)
