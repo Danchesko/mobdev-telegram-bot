@@ -18,6 +18,10 @@ pip install requirements.txt
 
 Create the bot from BotFather in Telegram, get the token, and run the run.py module in src
 
+## Documentation
+
+Documentation can be found in "doc/\_built" directory, as an html file.
+
 ## Built With
 
 * [Telegram Bot API](https://core.telegram.org/bots/api) - API for Telegram bots
